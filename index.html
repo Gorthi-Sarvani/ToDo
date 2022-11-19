@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{
+			background: url(https://i.pinimg.com/originals/cb/fd/e1/cbfde1d29d4340eed0fed241e0755777.jpg) fixed no-repeat;
+			background-size: cover;
+			text-align: center;
+		}
+		.list-type{
+			list-style: none;
+		}
+		.listitem{
+			font-size: 3rem;
+		}
+		#newTodo{
+			background-color: white ;
+			color: black;
+			margin: 20% 10% 0% 5%;
+			padding: 0.5%;
+			border-style: solid;
+		}
+		.btn{
+			 
+			color: white;
+			margin: 0% 10% 10% 5%;
+			background-color: blue;
+			border-radius: 25px;
+			padding: 0.5%;
+			
+
+		}
+
+		
+	</style>
+	<script src="https://kit.fontawesome.com/86bb47d1a9.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function todo(){
+			let newTodo=document.getElementById("newTodo").value
+			document.getElementById("newTodo").value=""
+			if(newTodo===""){
+				alert("Enter a Todo")
+			}
+			else{
+				addTodo(newTodo)
+			}
+			
+			}
+			function addTodo(newValue){
+				let ul=document.querySelector("ul")
+				console.log(ul)
+				let li=document.createElement("li")
+				li.innerHTML=`
+				<span class="listitem">${newValue}</span>
+				<i class="fa-solid fa-rectangle-x
+
+				mark"></i>`
+				li.classList.add("list-type")
+				ul.appendChild(li)
+			}
+	</script>
+
+</head>
+<body>
+	
+	
+	<input id="newTodo" placeholder="Enter a todo"/>
+	<ul>
+	</ul>
+	<button class="btn" onclick="todo()">submit</button>
+</body>
+</html>
